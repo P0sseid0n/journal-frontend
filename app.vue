@@ -2,7 +2,9 @@
    <div id="app">
       <img src="@/assets/BackImage.svg" alt="Back" id="BackImage" />
       <main>
-         <img src="@/assets/Logo.svg" alt="Necturnal Logo" />
+         <NuxtLink to="/">
+            <img src="@/assets/Logo.svg" alt="Necturnal Logo" />
+         </NuxtLink>
          <NuxtLayout>
             <NuxtPage />
          </NuxtLayout>
@@ -26,19 +28,23 @@
    padding: 0 24px;
 
    display: flex;
-   flex-direction: column;
+   align-items: center;
    justify-content: center;
-   align-items: flex-start;
 }
 
 #app > main {
+   flex: 1;
    width: 100%;
    max-width: 768px;
    margin: 0 auto;
+   z-index: 2;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
 }
 
-#app > main > *:not(img) {
-   z-index: 2;
+#app > main > *:not(a) {
    width: 100%;
 }
 
