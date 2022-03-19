@@ -1,10 +1,12 @@
 <template>
    <div id="app">
       <img src="@/assets/BackImage.svg" alt="Back" id="BackImage" />
-      <img src="@/assets/Logo.svg" alt="Necturnal Logo" />
-      <NuxtLayout>
-         <NuxtPage />
-      </NuxtLayout>
+      <main>
+         <img src="@/assets/Logo.svg" alt="Necturnal Logo" />
+         <NuxtLayout>
+            <NuxtPage />
+         </NuxtLayout>
+      </main>
    </div>
 </template>
 
@@ -29,7 +31,13 @@
    align-items: flex-start;
 }
 
-#app > *:not(img) {
+#app > main {
+   width: 100%;
+   max-width: 768px;
+   margin: 0 auto;
+}
+
+#app > main > *:not(img) {
    z-index: 2;
    width: 100%;
 }
