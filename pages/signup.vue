@@ -5,27 +5,19 @@
 <template>
    <main>
       <header>
-         <h1>Entrar</h1>
-         <NuxtLink to="/signup">Criar conta</NuxtLink>
+         <h1>Registrar</h1>
+         <NuxtLink to="/signin">Já tem uma conta?</NuxtLink>
       </header>
-      <AccountInput label="Seu nome de usuário" />
-      <AccountInput label="Sua senha" />
-      <footer>
-         <a href="/">Esqueceu a senha?</a>
-      </footer>
-      <button>Entrar</button>
+      <AccountInput label="Defina seu nome usuário" />
+      <AccountInput label="Defina sua senha" />
+      <AccountInput label="Email (opcional)" />
+      <button>Registrar</button>
    </main>
 </template>
 
 <style scoped>
 main {
    text-align: center;
-}
-
-main > footer {
-   text-align: right;
-   margin-bottom: 40px;
-   margin-top: 16px;
 }
 
 header {
@@ -54,6 +46,7 @@ a {
 }
 
 .AccountInput {
+   /* margin-bottom: px; */
    margin-top: 24px;
 }
 
@@ -71,5 +64,6 @@ button {
    max-width: 148px;
 
    height: 40px;
+   margin-top: 40px;
 }
 </style>

@@ -2,12 +2,14 @@
 defineProps<{
    label: string
 }>()
+
+
 </script>
 
 <template>
    <div class="AccountInput">
-      <input type="text" placeholder="&nbsp;" />
-      <span>{{ label }}</span>
+      <input type="text" placeholder="&nbsp;" :id="label.replaceAll(' ', '')" />
+      <label :for="label.replaceAll(' ', '')">{{ label }}</label>
    </div>
 </template>
 
@@ -33,29 +35,29 @@ input {
    color: #834825;
 }
 
-input:not(:placeholder-shown) + span,
-input:focus + span {
+input:not(:placeholder-shown) + label,
+input:focus + label {
    color: #736d6b;
 
-   transform: translateY(0%) scale(0.75);
-   top: 4px;
-   left: 0px;
+   font-size: 12px;
+   top: 12px;
 }
 
-/* input:not(:placeholder-shown) + span {
-   transform: translateY(0%) scale(0.75);
-   top: 4px;
-} */
-
-span {
+label {
    color: #834825;
+   cursor: text;
 
    position: absolute;
-   left: 8px;
+   left: 0;
    top: 50%;
    transform: translateY(-50%);
    font-size: 16px;
    font-weight: 600;
-   transition: all 0.2s;
+   transition: all 0.15s;
+
+   display: block;
+   width: 100%;
+   text-align: left;
+   padding-left: 8px;
 }
 </style>
