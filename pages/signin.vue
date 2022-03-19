@@ -8,7 +8,7 @@
          <h1>Entrar</h1>
          <NuxtLink to="/signup">Criar conta</NuxtLink>
       </header>
-      <AccountInput label="Seu Usuário" />
+      <AccountInput label="Seu nome de usuário" />
       <AccountInput label="Sua senha" />
       <footer>
          <a href="/">Esqueceu a senha?</a>
