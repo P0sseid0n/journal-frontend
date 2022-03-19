@@ -31,6 +31,7 @@
 
 #app > *:not(img) {
    z-index: 2;
+   width: 100%;
 }
 
 #BackImage {
