@@ -1,4 +1,9 @@
 <script setup lang="ts">
+const router = useRouter()
+
+function signin() {
+   router.push('/journals')
+}
 
 </script>
 
@@ -13,7 +18,7 @@
       <footer>
          <a href="/">Esqueceu a senha?</a>
       </footer>
-      <button>Entrar</button>
+      <button @click="signin">Entrar</button>
    </main>
 </template>
 

@@ -1,4 +1,9 @@
 <script setup lang="ts">
+const router = useRouter()
+
+function signup() {
+   router.push('/signin')
+}
 
 </script>
 
@@ -11,7 +16,7 @@
       <AccountInput label="Defina seu nome usuário" />
       <AccountInput label="Defina sua senha" />
       <AccountInput label="Email (opcional)" />
-      <button>Registrar</button>
+      <button @click="signup">Registrar</button>
    </main>
 </template>
 
