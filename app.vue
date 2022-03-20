@@ -13,7 +13,7 @@
 </template>
 
 <style >
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700&family=Montserrat:wght@400;600&display=swap");
 
 * {
    box-sizing: border-box;
