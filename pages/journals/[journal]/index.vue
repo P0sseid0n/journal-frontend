@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const route = useRoute()
-console.log(route)
 
 const notes = [
    'The h1, h2, h3, h4, h5, and h6 elements',
@@ -10,28 +9,30 @@ const notes = [
 </script>
 
 <template>
-   <header v-if="notes.length > 0">
-      <NuxtLink class="back" :to="(route.params.journal as string)">
-         <img src="@/assets/ArrowLeft.svg" alt="Back Icon" />
-         {{ route.params.journal }}
-      </NuxtLink>
-      <NuxtLink class="add" to="/create-note">
-         <img src="@/assets/Add.svg" alt="Add Icon" />
-         Adicionar nota
-      </NuxtLink>
-   </header>
-   <div class="list" v-if="notes.length > 0">
-      <NuxtLink v-for="(note, i) in notes" :to="'/journals/' + route.params.journal + '/' + note">
-         <img src="@/assets/Article.svg" alt="Journal" />
-         <h5>{{ note }}</h5>
-      </NuxtLink>
-   </div>
-   <div class="empty" v-else>
-      <p>{{ route.params.journal }}</p>
-      <img src="@/assets/EmptyState.svg" alt="EmptyState Icon" />
+   <main>
+      <header v-if="notes.length > 0">
+         <NuxtLink class="back" to="/journals">
+            <img src="@/assets/ArrowLeft.svg" alt="Back Icon" />
+            {{ route.params.journal }}
+         </NuxtLink>
+         <NuxtLink class="add" :to="'/journals/' + route.params.journal + '/create-note'">
+            <img src="@/assets/Add.svg" alt="Add Icon" />
+            Adicionar nota
+         </NuxtLink>
+      </header>
+      <div class="list" v-if="notes.length > 0">
+         <NuxtLink v-for="(note, i) in notes">
+            <img src="@/assets/Article.svg" alt="Journal" />
+            <h5>{{ note }}</h5>
+         </NuxtLink>
+      </div>
+      <div class="empty" v-else>
+         <p>{{ route.params.journal }}</p>
+         <img src="@/assets/EmptyState.svg" alt="EmptyState Icon" />
 
-      <NuxtLink to="/create-note">Criar nota</NuxtLink>
-   </div>
+         <NuxtLink :to="'/journals/' + route.params.journal + '/create-note'">Criar nota</NuxtLink>
+      </div>
+   </main>
 </template>
 
 
