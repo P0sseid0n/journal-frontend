@@ -1,10 +1,11 @@
 <template>
    <div id="app">
-      <img src="@/assets/BackImage.svg" alt="Back" id="BackImage" />
       <main>
-         <NuxtLink to="/">
-            <img src="@/assets/Logo.svg" alt="Necturnal Logo" />
-         </NuxtLink>
+         <header class="container">
+            <NuxtLink to="/" class="container-logo">
+               <img src="@/assets/Logo.svg" alt="Necturnal Logo" />
+            </NuxtLink>
+         </header>
          <NuxtLayout>
             <NuxtPage />
          </NuxtLayout>
@@ -14,7 +15,6 @@
 
 <style >
 @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700&family=Montserrat:wght@400;600&display=swap");
-
 * {
    box-sizing: border-box;
    padding: 0;
@@ -26,6 +26,11 @@
    height: 100vh;
    background: #f8e5d6;
    padding: 0 24px;
+
+   background-image: url("./assets/BackImage.svg");
+   background-position: left ; /* Center the image */
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-size: contain; /* Resize the background image to cover the entire container */
 
    display: flex;
    align-items: center;
@@ -48,12 +53,16 @@
    width: 100%;
 }
 
-#BackImage {
-   position: absolute;
-   top: 0;
-   left: 0;
-
-   height: 100%;
-   z-index: 0;
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+.container-logo {
+   width: min-content;
+}
+.container-logo img {
+   width: auto;
 }
 </style>
