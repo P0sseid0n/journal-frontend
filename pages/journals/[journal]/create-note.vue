@@ -11,9 +11,11 @@ const route = useRoute()
             {{ route.params.journal }}
          </NuxtLink>
       </header>
-      <input type="text" placeholder="Titulo" />
-      <textarea placeholder="Escreva sua nota"></textarea>
-      <button>Salvar nota</button>
+      <form @submit.prevent class="container-form">
+         <input type="text" placeholder="Titulo" required maxlength="30" />
+         <textarea placeholder="Escreva sua nota" required maxlength="100"></textarea>
+         <button>Salvar nota</button>
+      </form>
    </main>
 </template>
 
@@ -60,7 +62,9 @@ textarea {
 }
 
 textarea {
-   height: 320px;
+   height: 300px;
+   margin: 0 auto;
+   margin-bottom: 8px;
 }
 
 input::placeholder,
@@ -82,5 +86,15 @@ button {
    height: 40px;
    width: 100%;
    max-width: 190px;
+}
+.container-form {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-direction: column;
+}
+.container-form input {
+   margin: 5px;
 }
 </style>

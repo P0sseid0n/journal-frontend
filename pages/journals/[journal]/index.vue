@@ -6,11 +6,12 @@ const notes = [
    'The article element',
 ]
 
+
 </script>
 
 <template>
    <main>
-      <header v-if="notes.length > 0">
+      <header class="container-header" v-if="notes.length > 0">
          <NuxtLink class="back" to="/journals">
             <img src="@/assets/ArrowLeft.svg" alt="Back Icon" />
             {{ route.params.journal }}
@@ -20,6 +21,7 @@ const notes = [
             Adicionar nota
          </NuxtLink>
       </header>
+
       <div class="list" v-if="notes.length > 0">
          <NuxtLink v-for="(note, i) in notes">
             <img src="@/assets/Article.svg" alt="Journal" />
@@ -58,7 +60,6 @@ header .back {
    flex-direction: row;
    align-items: center;
 }
-
 header .add {
    border: 1px solid #834825;
    color: #834825;
@@ -123,5 +124,12 @@ div.empty {
    text-decoration-line: underline;
 
    color: #834825;
+}
+.container-header {
+   display: flex;
+   flex: 1;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: nowrap;
 }
 </style>

@@ -1,9 +1,14 @@
+
 <script setup lang="ts">
 
 const journals = {
    'HTML': [],
    'CSS': [],
    'Java script': [],
+   'Java': [],
+   // 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa': [],
+   // form => required input text
+   // fazer um max-length para o texto da capa do Jornal , para não bugar o css 😆   
 }
 
 const journalsList = Object.keys(journals)
@@ -12,6 +17,10 @@ const journalsList = Object.keys(journals)
 
 <template>
    <main>
+      <div class="container-input-create">
+         <input type="button" value="Criar" />
+      </div>
+
       <div class="list" v-if="journalsList.length > 0">
          <NuxtLink v-for="(journal, i) in journalsList" :to="'/journals/' + journal">
             <img src="@/assets/Cover1.svg" alt="Journal" />
@@ -29,7 +38,7 @@ const journalsList = Object.keys(journals)
 <style scoped>
 div.list {
    display: flex;
-   justify-content: center;
+   justify-content: space-between;
    flex-wrap: wrap;
    gap: 32px;
    padding-top: 64px;
@@ -43,6 +52,8 @@ div.list {
 .list a h3 {
    color: #000000;
    position: absolute;
+   text-align: center;
+
    top: 50%;
    width: 100%;
    padding: 0 32px;
@@ -74,5 +85,19 @@ div.empty {
    text-decoration-line: underline;
 
    color: #834825;
+}
+
+.container-input-create {
+   margin-top: 15px;
+}
+.container-input-create input {
+   border: 1px solid #834825;
+   color: #834825;
+   background: none;
+   width: 200px;
+   border-radius: 24px;
+   padding: 12px 16px;
+   font-weight: 500;
+   font-size: 16px;
 }
 </style>
